@@ -1,21 +1,16 @@
 package ru.mirea.mochalov.data_thread;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.widget.TextView;
-
 import java.util.concurrent.TimeUnit;
 
 public class MainActivity extends AppCompatActivity {
-
     TextView tvInfo;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         tvInfo = findViewById(R.id.textView);
         final Runnable runn1 = new Runnable() {
             public void run() {
