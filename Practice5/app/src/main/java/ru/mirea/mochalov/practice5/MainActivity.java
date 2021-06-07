@@ -1,7 +1,6 @@
 package ru.mirea.mochalov.practice5;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -23,16 +22,13 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         listCountSensor = findViewById(R.id.list_view);
-
         SensorManager sensorManager = (SensorManager)getSystemService(Context.SENSOR_SERVICE);
         accelerometerSensor = sensorManager.
                 getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         sensorManager.registerListener(this, accelerometerSensor,
                 SensorManager.SENSOR_DELAY_NORMAL);
         List<Sensor> sensors = sensorManager.getSensorList(Sensor.TYPE_ALL);
-
         ArrayList<HashMap<String, Object>> arrayList = new ArrayList<>();
         HashMap<String, Object> sensorTypeList;
         for (int i = 0; i < sensors.size(); i++) {
@@ -41,7 +37,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             sensorTypeList.put("Value", sensors.get(i).getMaximumRange());
             arrayList.add(sensorTypeList);
         }
-
         SimpleAdapter mHistory = new SimpleAdapter(this, arrayList,
                 android.R.layout.simple_list_item_2, new String[]{"Name", "Value"},
                 new int[]{android.R.id.text1, android.R.id.text2});
@@ -56,6 +51,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             float valueRoll = event.values[2];
         }
     }
+    
     @Override
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
         
