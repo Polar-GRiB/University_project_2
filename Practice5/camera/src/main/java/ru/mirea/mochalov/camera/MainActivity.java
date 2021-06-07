@@ -71,14 +71,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    /**
-     * Производится генерирование имени файла на основе текущего времени и создание файла
-     * в директории Pictures на ExternelStorage.
-     * class.
-     * @return File возвращается объект File .
-     * @exception IOException если возвращается ошибка записи в файл
-     */
-
     private File createImageFile() throws IOException {
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
         String imageFileName = "IMAGE_" + timeStamp + "_";
