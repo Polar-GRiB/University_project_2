@@ -6,8 +6,6 @@ import android.os.Looper;
 import android.os.Message;
 import android.util.Log;
 
-
-
 public class MyLooper extends Thread {
     private int number = 0;
     Handler handler;
@@ -30,7 +28,6 @@ public class MyLooper extends Thread {
                 Log.d(what_about_me, msg.getData().getString("KEY") + ": " + 20);
                 number++;
             }
-
         };
         Looper.loop();
     }
