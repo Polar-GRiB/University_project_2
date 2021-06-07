@@ -29,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
             Manifest.permission.RECORD_AUDIO
     };
     private boolean isWork;
-
     private Button startRecordButton;
     private Button stopRecordButton;
     private MediaRecorder mediaRecorder;
@@ -39,13 +38,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         isWork = hasPermissions(this, PERMISSIONS);
         if (!isWork) {
             ActivityCompat.requestPermissions(this, PERMISSIONS,
                     REQUEST_CODE_PERMISSION);
         }
-
         startRecordButton = findViewById(R.id.buttonStart);
         stopRecordButton = findViewById(R.id.buttonStop);
         mediaRecorder = new MediaRecorder();
