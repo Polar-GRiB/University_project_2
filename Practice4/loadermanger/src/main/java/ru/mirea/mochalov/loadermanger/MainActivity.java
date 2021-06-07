@@ -5,7 +5,6 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.loader.app.LoaderManager;
 import androidx.loader.content.Loader;
-
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -22,9 +21,7 @@ public class MainActivity extends AppCompatActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         editText = findViewById(R.id.edit_text);
-
         Bundle bundle = new Bundle();
         bundle.putString(MyLoader.ARG_WORD, "mirea");
         getSupportLoaderManager().initLoader(LoaderID, bundle, this);
