@@ -1,21 +1,18 @@
 package ru.mirea.mochalov.thread;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-
     int counter = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         TextView infoTextView = findViewById(R.id.textView);
         Thread mainThread = Thread.currentThread();
         infoTextView.setText("Текущий поток: " + mainThread.getName());
