@@ -11,7 +11,6 @@ import java.util.Collections;
 
 public class MyLoader extends AsyncTaskLoader<String> {
     public static final String ARG_WORD = "WORD";
-
     private String symbols;
     private String firstName;
 
@@ -21,7 +20,6 @@ public class MyLoader extends AsyncTaskLoader<String> {
         super(context);
         if (args != null){
             firstName = args.getString(ARG_WORD);
-
             symbols = args.getString(ARG_WORD);
             charList = new ArrayList<>();
             for (char symbol : symbols.toCharArray()){
